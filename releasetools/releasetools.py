@@ -34,3 +34,6 @@ def AddImage(info, basename, dest):
 def OTA_InstallEnd(info):
     AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
     AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta")
+
+def FullOTA_InstallBegin(info):
+    AddImage(info, "super_empty.img", "/dev/block/by-name/super")
