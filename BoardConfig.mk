@@ -27,7 +27,7 @@ TARGET_SCREEN_DENSITY := 420
 
 # Kernel
 BOARD_BOOT_HEADER_NAME       := SRPSL10A001KU
-TARGET_KERNEL_CONFIG := exynos9610-m21nsxx_defconfig
+TARGET_KERNEL_CONFIG := m21_defconfig
 BOARD_DTBO_CFG := $(DEVICE_PATH)/kernel/m21.cfg
 
 # Partitions
