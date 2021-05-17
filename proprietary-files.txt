@@ -1,0 +1,3 @@
+# NFC
+system/etc/nfc_key
+system/etc/nfcee_access.xml
