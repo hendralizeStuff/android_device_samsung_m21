@@ -18,8 +18,8 @@
 set -e
 
 # Required!
-export DEVICE=m31
-export DEVICE_COMMON=universal9610-common
+export DEVICE=m21
+export DEVICE_COMMON=universal9611-common
 export VENDOR=samsung
 
 export DEVICE_BRINGUP_YEAR=2020

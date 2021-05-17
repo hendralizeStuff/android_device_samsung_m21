@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
 # Inherit common device configuration
-$(call inherit-product, device/samsung/universal9610-common/universal9610-common.mk)
+$(call inherit-product, device/samsung/universal9611-common/universal9611-common.mk)
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
@@ -61,4 +61,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Inherit device vendor
-$(call inherit-product-if-exists, vendor/samsung/m31/m31-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/m21/m21-vendor.mk)

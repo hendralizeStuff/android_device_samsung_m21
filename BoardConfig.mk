@@ -14,21 +14,21 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/m31
+DEVICE_PATH := device/samsung/m21
 
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := m31nsxx,m31xx,m31
+TARGET_OTA_ASSERT_DEVICE := m21,m21ns,m21nsxx
 
 # Display
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
 BOARD_BOOT_HEADER_NAME       := SRPSL10A001KU
-TARGET_KERNEL_CONFIG := exynos9610-m31nsxx_defconfig
-BOARD_DTBO_CFG := $(DEVICE_PATH)/kernel/m31.cfg
+TARGET_KERNEL_CONFIG := exynos9610-m21nsxx_defconfig
+BOARD_DTBO_CFG := $(DEVICE_PATH)/kernel/m21.cfg
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 61865984
@@ -54,4 +54,4 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.exynos9611
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Inherit common board flags
-include device/samsung/universal9610-common/BoardConfigCommon.mk
+include device/samsung/universal9611-common/BoardConfigCommon.mk
