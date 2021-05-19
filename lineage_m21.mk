@@ -45,3 +45,7 @@ BUILD_FINGERPRINT := samsung/m21nsxx/m21:11/RP1A.200720.012/M215FXXU2BUD1:user/r
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=m21nsxx \
         PRIVATE_BUILD_DESC="m21nsxx-user-11-RP1A.200720.012-M215FXXU2BUD1-release-keys"
+
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += \
+    lineage.updater.uri=https://raw.githubusercontent.com/hendramanu/lineage_ota/master/m21.json
