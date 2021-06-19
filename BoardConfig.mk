@@ -1,18 +1,19 @@
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-PLATFORM_VERSION := 11
-
+# Device tree path
 DEVICE_PATH := device/samsung/m21
+
+# Bootloader
+BOARD_VENDOR := samsung
+TARGET_SOC := exynos9611
+TARGET_BOOTLOADER_BOARD_NAME := universal9611
+TARGET_USES_UEFI := true
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
+# Platform
+TARGET_BOARD_PLATFORM := exynos9611
+TARGET_BOARD_PLATFORM_GPU := mali-g72
+PLATFORM_VERSION := 11
+PLATFORM_SECURITY_PATCH := 2021-02-01
 
 # Architecture
 TARGET_ARCH := arm64
@@ -22,35 +23,35 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a73
 TARGET_CPU_SMP := true
 
+# Secondary architecture
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Bootloader
-BOARD_VENDOR := samsung
-TARGET_SOC := exynos9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_NO_BOOTLOADER := true
-TARGET_USES_UEFI := true
-TARGET_NO_RADIOIMAGE := true
-
 # Kernel
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
+BOARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/recovery_dtbo
+
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9611
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 2 --board SRPSL26A002RU
-
-# Platform
-TARGET_BOARD_PLATFORM := exynos9611
-TARGET_BOARD_PLATFORM_GPU := mali-g72
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000
+BOARD_MKBOOTIMG_ARGS += --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS += --header_version 2
+BOARD_MKBOOTIMG_ARGS += --board SRPSL26A002RU
 
 # Filesystem
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# Vendor seperation
 TARGET_COPY_OUT_VENDOR := vendor
 
 # TWRP specific build flags
@@ -68,15 +69,8 @@ TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/recovery_dtbo
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
-PLATFORM_SECURITY_PATCH := 2021-02-01
-
-BOARD_KERNEL_IMAGE_NAME := Image
-
+# Dynamic partitions
 BOARD_SUPER_PARTITION_SIZE := 6382682112
 BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_SUPER_PARTITION_PARTITION_LIST := \
