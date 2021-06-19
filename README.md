@@ -1,4 +1,4 @@
-# TWRP device tree for Samsung Galaxy A51
+# SHRP device tree for Samsung Galaxy A51
 
 ## Build
 
