@@ -5,6 +5,7 @@
 odm		/odm		ext4
 product		/product	ext4
 system		/system		ext4
+system_ext	/system_ext	ext4
 vendor		/vendor		ext4
 
 # Physical partitions
