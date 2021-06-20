@@ -71,21 +71,19 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_USE_SAMSUNG_HAPTICS := true
 
-# Dynamic partitions
-BOARD_SUPER_PARTITION_SIZE := 6382682112
-BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
-BOARD_SUPER_PARTITION_PARTITION_LIST := \
+# Dynamic Partition handling flags
+
+# Makes twrp ignore "unable to update logical partition" error
+IGNORE_UPDATE_LOGICAL_PARTITION_ERROR := true
+# lets the dynamic partitions be wipable/resizable in twrp > wipe
+ALLOW_LOGICAL_PARTITION_WIPE := true
+# these dynamic partitions will get mounted as rw
+BOARD_RW_DYNAMIC_PARTITIONS_LIST := \
     system \
     system_ext \
     vendor \
     product \
     odm
-
-# BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE is set to BOARD_SUPER_PARTITION_SIZE / 2 - 4MB
-BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 3191341052
-
-# Set error limit to BOARD_SUPER_PARTITION_SIZE - 500MB
-BOARD_SUPER_PARTITION_ERROR_LIMIT := 5882682112
 
 # SHRP Flags
 SHRP_PATH := $(DEVICE_PATH)
