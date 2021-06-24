@@ -70,6 +70,7 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_USE_SAMSUNG_HAPTICS := true
+TW_INCLUDE_CRYPTO := false
 
 # Dynamic Partition handling flags
 
