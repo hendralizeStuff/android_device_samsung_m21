@@ -1,0 +1,8 @@
+[
+	{
+		"remote":"github",
+		"repository":"hendralizeStuff/Destrictize_9611",
+		"target_path":"kernel/samsung/universal9611",
+		"revision":"android-11.0"
+	}
+]
