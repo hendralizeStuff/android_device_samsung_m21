@@ -71,6 +71,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_USE_SAMSUNG_HAPTICS := true
 TW_INCLUDE_CRYPTO := false
+TW_EXCLUDE_NANO := true
 
 # Dynamic Partition handling flags
 
